@@ -697,7 +697,6 @@ class TextSelectionGestureDetector extends StatefulWidget {
     this.onDragSelectionUpdate,
     this.onDragSelectionEnd,
     this.behavior,
-    this.deviceKindTracker,
     @required this.child,
   }) : assert(child != null),
        super(key: key);
@@ -758,9 +757,6 @@ class TextSelectionGestureDetector extends StatefulWidget {
   ///
   /// This defaults to [HitTestBehavior.deferToChild].
   final HitTestBehavior behavior;
-
-  /// {@macro flutter.widgets.gestureDetector.deviceKindTracker}
-  final DeviceKindTracker deviceKindTracker;
 
   /// Child below this widget.
   final Widget child;
@@ -982,7 +978,6 @@ class _TextSelectionGestureDetectorState extends State<TextSelectionGestureDetec
       gestures: gestures,
       excludeFromSemantics: true,
       behavior: widget.behavior,
-      deviceKindTracker: widget.deviceKindTracker,
       child: widget.child,
     );
   }
